@@ -1,0 +1,245 @@
+--Bacon 4 Like BOIII
+
+local buybuttonsconceptversion = Instance.new("ScreenGui")
+local StoneAxe = Instance.new("TextButton")
+local Shears = Instance.new("TextButton")
+local Wool = Instance.new("TextButton")
+local Engo = Instance.new("ImageButton")
+local Version = Instance.new("TextButton")
+local BrotherScept = Instance.new("ImageButton")
+local tapforengovapeoridk = Instance.new("TextLabel")
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+buybuttonsconceptversion.Name = "buybuttons concept version"
+buybuttonsconceptversion.Parent = game.CoreGui
+buybuttonsconceptversion.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+StoneAxe.Name = "Stone Axe"
+StoneAxe.Parent = buybuttonsconceptversion
+StoneAxe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+StoneAxe.Position = UDim2.new(-1.49011612e-08, 0, 0.0726256669, 0)
+StoneAxe.Size = UDim2.new(0, 200, 0, 50)
+StoneAxe.Font = Enum.Font.SourceSans
+StoneAxe.Text = "Stone Axe"
+StoneAxe.TextColor3 = Color3.fromRGB(0, 0, 0)
+StoneAxe.TextSize = 14.000
+StoneAxe.MouseButton1Click:connect(function()
+	local axetobuy = "stone_axe"
+	local price = "20"
+	local args = {
+		[1] = {
+			["shopItem"] = {
+				["currency"] = "iron",
+				["itemType"] = axetobuy,
+				["amount"] = 1,
+				["price"] = price,
+				["category"] = "Tools",
+				["spawnWithItems"] = {
+					[1] = axetobuy
+				},
+				["tiered"] = true
+			}
+		}
+	}
+
+	game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.BedwarsPurchaseItem:InvokeServer(unpack(args))
+end)
+
+Shears.Name = "Shears"
+Shears.Parent = buybuttonsconceptversion
+Shears.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Shears.Position = UDim2.new(0, 0, 0.223463684, 0)
+Shears.Size = UDim2.new(0, 200, 0, 50)
+Shears.Font = Enum.Font.SourceSans
+Shears.Text = "Shears"
+Shears.TextColor3 = Color3.fromRGB(0, 0, 0)
+Shears.TextSize = 14.000
+Shears.MouseButton1Down:connect(function()
+	local A_1 = 
+		{
+			["shopItem"] = 
+			{
+				["currency"] = "iron", 
+				["itemType"] = "shears", 
+				["amount"] = 1, 
+				["price"] = 30, 
+				["spawnWithItems"] = 
+				{
+					[1] = "shears"
+				}, 
+				["category"] = "Tools"
+			}
+		}
+	local Event = game:GetService("ReplicatedStorage")["rbxts_include"]["node_modules"].net.out["_NetManaged"].BedwarsPurchaseItem
+	Event:InvokeServer(A_1)
+
+end)
+
+Wool.Name = "Wool"
+Wool.Parent = buybuttonsconceptversion
+Wool.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Wool.Position = UDim2.new(0, 0, 0.370577276, 0)
+Wool.Size = UDim2.new(0, 200, 0, 50)
+Wool.Font = Enum.Font.SourceSans
+Wool.Text = "Wool"
+Wool.TextColor3 = Color3.fromRGB(0, 0, 0)
+Wool.TextSize = 14.000
+buywool.MouseButton1Click:connect(function()
+	woolamountvalue = tonumber(woolamount.Text)
+	if woolamountvalue == nil then woolamountvalue = 1 else woolamountvalue = tonumber(woolamount.Text) end
+	for i = 1,woolamountvalue do
+		local args = {
+			[1] = {
+				["shopItem"] = {
+					["currency"] = "iron",
+					["itemType"] = "wool_white",
+					["amount"] = 16,
+					["price"] = 8,
+					["category"] = "Blocks"
+				}
+			}
+		}
+
+		game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.BedwarsPurchaseItem:InvokeServer(unpack(args))
+	end
+
+Engo.Name = "Engo"
+Engo.Parent = buybuttonsconceptversion
+Engo.BackgroundColor3 = Color3.fromRGB(17, 14, 35)
+Engo.BorderColor3 = Color3.fromRGB(17, 14, 35)
+Engo.Position = UDim2.new(0, 0, 0.480446935, 0)
+Engo.Size = UDim2.new(0, 100, 0, 100)
+
+Version.Name = "Version"
+Version.Parent = buybuttonsconceptversion
+Version.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Version.Position = UDim2.new(0.913290739, 0, 0.906890154, 0)
+Version.Size = UDim2.new(0, 132, 0, 50)
+Version.Font = Enum.Font.SourceSans
+Version.Text = "qt bacon's concept version"
+Version.TextColor3 = Color3.fromRGB(0, 0, 0)
+	Version.TextSize = 14.000
+	Version.Image = "http://www.roblox.com/asset/?id=8324584673"
+	Version.MouseButton1Down:connect(function()
+		local light = game.Lighting
+		for i, v in pairs(light:GetChildren()) do
+			v:Destroy()
+		end
+
+		local ter = workspace.Terrain
+		local color = Instance.new("ColorCorrectionEffect")
+		local bloom = Instance.new("BloomEffect")
+		local sun = Instance.new("SunRaysEffect")
+		local blur = Instance.new("BlurEffect")
+
+		color.Parent = light
+		bloom.Parent = light
+		sun.Parent = light
+		blur.Parent = light
+
+
+		local config = {
+
+			Terrain = true;
+			ColorCorrection = true;
+			Sun = true;
+			Lighting = true;
+			BloomEffect = true;
+
+		}
+
+
+		color.Enabled = true
+		color.Contrast = 0.15
+		color.Brightness = 0.1
+		color.Saturation = 0.2
+		color.TintColor = Color3.fromRGB(255, 222, 211)
+
+		bloom.Enabled = true
+		bloom.Intensity = 0.3
+
+		sun.Enabled = true
+		sun.Intensity = 1
+		sun.Spread = 5
+
+		bloom.Enabled = true
+		bloom.Intensity = 0.05
+		bloom.Size = 32
+		bloom.Threshold = 1
+
+		blur.Enabled = true
+		blur.Size = 2
+
+
+
+		if config.ColorCorrection then
+			color.Enabled = true
+		end
+
+
+		if config.Sun then
+			sun.Enabled = true
+		end
+
+
+		if config.Terrain then
+			ter.WaterColor = Color3.fromRGB(10, 10, 24)
+			ter.WaterWaveSize = 0.1
+			ter.WaterWaveSpeed = 22
+			ter.WaterTransparency = 0.9
+			ter.WaterReflectance = 0.05
+		end
+
+
+		if config.Lighting then
+			light.Ambient = Color3.fromRGB(120, 31, 42)
+			light.Brightness = 3.5
+			light.ColorShift_Bottom = Color3.fromRGB(12, 31, 42)
+			light.ColorShift_Top = Color3.fromRGB(12, 31, 42)
+			light.ExposureCompensation = 0
+			light.FogColor = Color3.fromRGB(132, 132, 132)
+			light.GlobalShadows = true
+			light.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
+			light.Outlines = true
+		end
+	end)
+
+BrotherScept.Name = "BrotherScept"
+BrotherScept.Parent = buybuttonsconceptversion
+BrotherScept.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BrotherScept.Position = UDim2.new(-0.00127713918, 0, 0.685288668, 0)
+BrotherScept.Size = UDim2.new(0, 100, 0, 100)
+	BrotherScept.Image = "rbxassetid://8343541349"
+	BrotherScept.Image = "http://www.roblox.com/asset/?id=8324584673"
+	BrotherScept.MouseButton1Down:connect(function()
+		print("EPIC BACON BROTHER :DDDD")
+	end)
+
+tapforengovapeoridk.Name = "tap for engovape or idk"
+tapforengovapeoridk.Parent = buybuttonsconceptversion
+tapforengovapeoridk.BackgroundColor3 = Color3.fromRGB(17, 14, 35)
+tapforengovapeoridk.BorderColor3 = Color3.fromRGB(17, 14, 35)
+tapforengovapeoridk.Position = UDim2.new(0.072927177, 0, 0.527001858, 0)
+tapforengovapeoridk.Size = UDim2.new(0, 200, 0, 50)
+tapforengovapeoridk.Font = Enum.Font.SourceSans
+tapforengovapeoridk.Text = "tap for engovape or idk"
+tapforengovapeoridk.TextColor3 = Color3.fromRGB(255, 255, 255)
+tapforengovapeoridk.TextSize = 14.000
+	tapforengovapeoridk.TextStrokeColor3 = Color3.fromRGB(17, 14, 35)
+	tapforengovapeoridk.Image = "http://www.roblox.com/asset/?id=8324584673"
+	tapforengovapeoridk.MouseButton1Down:connect(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/joeengo/VapeV4ForRoblox/main/EngoVapeLoader.lua"))()
+	end)
+
+TextLabel.Parent = buybuttonsconceptversion
+TextLabel.BackgroundColor3 = Color3.fromRGB(120, 75, 50)
+TextLabel.BorderColor3 = Color3.fromRGB(120, 75, 50)
+TextLabel.Position = UDim2.new(0.0732348785, 0, 0.731843591, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "Brother Bacon"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 30.000
+TextLabel.TextStrokeColor3 = Color3.fromRGB(120, 75, 50)
